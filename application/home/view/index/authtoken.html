@@ -1,0 +1,19 @@
+{extend name="common/frame" /}
+
+{block name="content"}
+
+{if $viewData.err == ''}
+<div class="jumbotron">
+    <p>access_token：{$viewData.token}</p>
+    <form action="{:url('index/requestUserInfo')}" method="post">
+        <input type="hidden" name="access_token" value="{$viewData.token}" />
+        <button type="submit" class="btn btn-primary btn-lg" >获取userinfo</button>
+    </form>
+</div>
+{else /}
+<div class="alert alert-danger" role="alert">
+    {$viewData.err}
+</div>
+{/if}
+
+{/block}

@@ -1,0 +1,29 @@
+{extend name="common/frame" /}
+
+{block name="content"}
+
+<div class="panel panel-default" style="margin-top: 50px">
+    <div class="panel-body">
+        <h3>“{$viewData.app_name}” 希望获取您的以下信息：</h3>
+        <div>
+            <img src="{$viewData.user.avatar}" alt="..." class="img-circle" style="width: auto;height: 100px;display: inline-block" />
+            <ul style="font-family: 宋体;display: inline-block;vertical-align: middle">
+                <li>用户昵称、年龄、头像信息</li>
+                <li>用户位置信息</li>
+                <li>用户手机号信息</li>
+            </ul>
+        </div>
+        <form action="{:url('Authorize/authcode')}" method="post">
+            <input type="hidden" name="appid" value="{$viewData.param.appid}" />
+            <input type="hidden" name="response_type" value="{$viewData.param.response_type}" />
+            <input type="hidden" name="redirect_url" value="{$viewData.param.redirect_url}" />
+            <div style="margin-top: 20px">
+                <button class="btn btn-success" type="submit">同意</button>
+                <button class="btn btn-danger" onclick="window.location.href='/authorize/refuse'" type="button">拒绝</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+{/block}

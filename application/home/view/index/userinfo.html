@@ -1,0 +1,16 @@
+{extend name="common/frame" /}
+
+{block name="content"}
+
+<div class="jumbotron">
+    <img src="{$viewData.user.avatar}" alt="..." class="img-circle" style="width: auto;height: 100px;display: inline-block" />
+    <ul style="font-family: 宋体;display: inline-block;vertical-align: middle">
+        <li>昵称：{$viewData.user.nickname}</li>
+        <li>用户名：{$viewData.user.username}</li>
+        <li>年龄：{$viewData.user.age}</li>
+        <li>地区：{$viewData.user.area}</li>
+        <li>生日：{$viewData.user.birth}</li>
+    </ul>
+</div>
+
+{/block}

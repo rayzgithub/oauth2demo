@@ -1,0 +1,13 @@
+{extend name="common/frame" /}
+
+{block name="content"}
+
+<div class="jumbotron">
+    <p>授权码（将在30s内失效）：{$viewData.authcode}</p>
+    <form action="{:url('index/requestToken')}" method="post">
+        <input type="hidden" name="code" value="{$viewData.authcode}" />
+        <button type="submit" class="btn btn-primary btn-lg" >获取token</button>
+    </form>
+</div>
+
+{/block}

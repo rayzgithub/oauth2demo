@@ -1,0 +1,10 @@
+{extend name="common/frame" /}
+
+{block name="content"}
+
+<div class="jumbotron">
+    <p>授权码授权是OAuth2.0最常用的授权方式。 点击下面的“获取授权码”按钮将跳转至授权中心进行授权以获得授权码，授权码将在30秒内有效。</p>
+    <p><a class="btn btn-primary btn-lg" href="{$viewData.authcode_url}" role="button">获取code</a></p>
+</div>
+
+{/block}
